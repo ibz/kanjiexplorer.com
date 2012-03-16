@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>104</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>1522</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Illness</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>yamaidare</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>Elt</position>
+          <strokeCount>5</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

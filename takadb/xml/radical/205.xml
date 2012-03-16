@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>205</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>2698</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Frog</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>ben</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>W</position>
+          <strokeCount>13</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

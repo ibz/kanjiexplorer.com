@@ -1,0 +1,43 @@
+<character>
+  <characterId>897</characterId>
+  <jaUcsCode>35422</jaUcsCode>
+  <jaElementId>1876</jaElementId>
+  <jaJisCode>15212</jaJisCode>
+  <jaJouyouGrade>6</jaJouyouGrade>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <readings>
+    <SLCMap>
+      <entry>
+        <string>ja</string>
+        <map>
+          <entry>
+            <int>1</int>
+            <reading>
+              <sourceReading>シ</sourceReading>
+              <jpReadingType>on</jpReadingType>
+              <meanings>
+                <DLCMap/>
+              </meanings>
+            </reading>
+          </entry>
+        </map>
+      </entry>
+    </SLCMap>
+  </readings>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>en</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Part of speech; Speech; Prayer; Words</destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+</character>

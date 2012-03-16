@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>169</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>576</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Gate</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>mongamae</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>Eltr</position>
+          <strokeCount>8</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

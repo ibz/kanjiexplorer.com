@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>54</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>2626</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Stride</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>en'nyou</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>Ebl</position>
+          <strokeCount>3</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

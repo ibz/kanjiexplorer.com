@@ -1,0 +1,43 @@
+<character>
+  <characterId>2111</characterId>
+  <jaUcsCode>37676</jaUcsCode>
+  <jaElementId>264</jaElementId>
+  <jaJisCode>20259</jaJisCode>
+  <jaJouyouGrade>7</jaJouyouGrade>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <readings>
+    <SLCMap>
+      <entry>
+        <string>ja</string>
+        <map>
+          <entry>
+            <int>1</int>
+            <reading>
+              <sourceReading>レン</sourceReading>
+              <jpReadingType>on</jpReadingType>
+              <meanings>
+                <DLCMap/>
+              </meanings>
+            </reading>
+          </entry>
+        </map>
+      </entry>
+    </SLCMap>
+  </readings>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>en</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Train; Practice; Forge</destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+</character>

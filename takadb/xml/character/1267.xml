@@ -1,0 +1,65 @@
+<character>
+  <characterId>1267</characterId>
+  <jaUcsCode>32218</jaUcsCode>
+  <jaElementId>2083</jaElementId>
+  <jaJisCode>16510</jaJisCode>
+  <jaJouyouGrade>2</jaJouyouGrade>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <readings>
+    <SLCMap>
+      <entry>
+        <string>ja</string>
+        <map>
+          <entry>
+            <int>1</int>
+            <reading>
+              <sourceReading>セン</sourceReading>
+              <jpReadingType>on</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>Line, track; Beam, ray</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>ligne, piste; voie; faisceau, rayon</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+        </map>
+      </entry>
+    </SLCMap>
+  </readings>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>en</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Line; Circuit; Beam</destMeaning>
+        </meaning>
+      </entry>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>fr</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Ligne; Circuit; Faisceau</destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+</character>

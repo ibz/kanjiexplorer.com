@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>20</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>863</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Wrap</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>tsutsumigamae</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>Etr</position>
+          <strokeCount>2</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

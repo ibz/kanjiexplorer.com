@@ -1,0 +1,88 @@
+<character>
+  <characterId>932</characterId>
+  <jaUcsCode>23460</jaUcsCode>
+  <jaElementId>1018</jaElementId>
+  <jaJisCode>15420</jaJisCode>
+  <jaJouyouGrade>2</jaJouyouGrade>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <readings>
+    <SLCMap>
+      <entry>
+        <string>ja</string>
+        <map>
+          <entry>
+            <int>2</int>
+            <reading>
+              <sourceReading>むろ</sourceReading>
+              <jpReadingType>kun</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>Greenhouse; Cellar</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>cave; cellier, silo; serre</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+          <entry>
+            <int>1</int>
+            <reading>
+              <sourceReading>シツ</sourceReading>
+              <jpReadingType>on</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>A room</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>une pièce, une chambre</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+        </map>
+      </entry>
+    </SLCMap>
+  </readings>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>en</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Room; Cellar; Greenhouse</destMeaning>
+        </meaning>
+      </entry>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>fr</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Pièce; Cellier; Serre</destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+</character>

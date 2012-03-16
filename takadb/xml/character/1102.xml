@@ -1,0 +1,43 @@
+<character>
+  <characterId>1102</characterId>
+  <jaUcsCode>31456</jaUcsCode>
+  <jaElementId>1897</jaElementId>
+  <jaJisCode>15951</jaJisCode>
+  <jaJouyouGrade>3</jaJouyouGrade>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <readings>
+    <SLCMap>
+      <entry>
+        <string>ja</string>
+        <map>
+          <entry>
+            <int>1</int>
+            <reading>
+              <sourceReading>ショウ</sourceReading>
+              <jpReadingType>on</jpReadingType>
+              <meanings>
+                <DLCMap/>
+              </meanings>
+            </reading>
+          </entry>
+        </map>
+      </entry>
+    </SLCMap>
+  </readings>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>en</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Badge; Medal; Chapter</destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+</character>

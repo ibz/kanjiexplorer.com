@@ -1,0 +1,43 @@
+<character>
+  <characterId>2102</characterId>
+  <jaUcsCode>27508</jaUcsCode>
+  <jaElementId>1180</jaElementId>
+  <jaJisCode>20082</jaJisCode>
+  <jaJouyouGrade>4</jaJouyouGrade>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <readings>
+    <SLCMap>
+      <entry>
+        <string>ja</string>
+        <map>
+          <entry>
+            <int>1</int>
+            <reading>
+              <sourceReading>レキ</sourceReading>
+              <jpReadingType>on</jpReadingType>
+              <meanings>
+                <DLCMap/>
+              </meanings>
+            </reading>
+          </entry>
+        </map>
+      </entry>
+    </SLCMap>
+  </readings>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>en</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Successive; Curriculum</destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+</character>

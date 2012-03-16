@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>53</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>423</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Dotted cliff</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>madare</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>Elt</position>
+          <strokeCount>3</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

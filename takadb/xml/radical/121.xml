@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>121</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>2637</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Can</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>hotogi</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>W</position>
+          <strokeCount>6</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

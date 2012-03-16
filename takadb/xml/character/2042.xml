@@ -1,0 +1,37 @@
+<character>
+  <characterId>2042</characterId>
+  <jaUcsCode>38348</jaUcsCode>
+  <jaElementId>3650</jaElementId>
+  <jaJisCode>28524</jaJisCode>
+  <jaJouyouGrade>0</jaJouyouGrade>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <jaFrequency>0</jaFrequency>
+  <readings>
+    <SLCMap/>
+  </readings>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>en</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning></destMeaning>
+        </meaning>
+      </entry>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>fr</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning></destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+</character>

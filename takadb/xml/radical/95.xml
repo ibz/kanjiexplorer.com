@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>95</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>505</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Mysterious</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>gen</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>W</position>
+          <strokeCount>5</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>204</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>178</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Embroidery</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>futsu</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>W</position>
+          <strokeCount>13</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

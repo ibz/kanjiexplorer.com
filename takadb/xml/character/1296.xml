@@ -1,0 +1,111 @@
+<character>
+  <characterId>1296</characterId>
+  <jaUcsCode>32068</jaUcsCode>
+  <jaElementId>1761</jaElementId>
+  <jaJisCode>16712</jaJisCode>
+  <jaJouyouGrade>2</jaJouyouGrade>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <readings>
+    <SLCMap>
+      <entry>
+        <string>ja</string>
+        <map>
+          <entry>
+            <int>2</int>
+            <reading>
+              <sourceReading>くみ</sourceReading>
+              <jpReadingType>kun</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>Group; Team; Company</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>groupe; équipe; compagnie</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+          <entry>
+            <int>1</int>
+            <reading>
+              <sourceReading>ソ</sourceReading>
+              <jpReadingType>on</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>Group; Team; Company</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>groupe; équipe; compagnie</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+          <entry>
+            <int>3</int>
+            <reading>
+              <sourceReading>く・む</sourceReading>
+              <jpReadingType>kun</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>To put together; To partner (with); To cross (your arms, legs)</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>assembler; collaborer (avec qn.); croiser (les bras, les jambes)</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+        </map>
+      </entry>
+    </SLCMap>
+  </readings>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>fr</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Assembler; Association; Equipe</destMeaning>
+        </meaning>
+      </entry>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>en</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Assemble; Association; Team</destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+</character>

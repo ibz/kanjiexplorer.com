@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>60</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>535</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Going man</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>gyouninben</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>L</position>
+          <strokeCount>3</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

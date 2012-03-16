@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>201</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>419</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Yellow</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>kiiro</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>W</position>
+          <strokeCount>13</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

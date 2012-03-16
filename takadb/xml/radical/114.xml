@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>114</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>1565</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Emperor Wu</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>unoashi</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>B</position>
+          <strokeCount>5</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

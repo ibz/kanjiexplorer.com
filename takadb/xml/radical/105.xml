@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>105</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>1610</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Spread legs</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>hatsugashira</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>T</position>
+          <strokeCount>5</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>

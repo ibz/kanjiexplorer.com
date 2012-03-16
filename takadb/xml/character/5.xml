@@ -1,0 +1,88 @@
+<character>
+  <characterId>5</characterId>
+  <jaUcsCode>24515</jaUcsCode>
+  <jaElementId>413</jaElementId>
+  <jaJisCode>16180</jaJisCode>
+  <jaJouyouGrade>2</jaJouyouGrade>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <readings>
+    <SLCMap>
+      <entry>
+        <string>ja</string>
+        <map>
+          <entry>
+            <int>2</int>
+            <reading>
+              <sourceReading>こころ</sourceReading>
+              <jpReadingType>kun</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>Heart; Spirit; Core</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>coeur; âme, esprit; noyau</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+          <entry>
+            <int>1</int>
+            <reading>
+              <sourceReading>シン</sourceReading>
+              <jpReadingType>on</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>Heart; Spirit; Core</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>coeur; âme, esprit; noyau</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+        </map>
+      </entry>
+    </SLCMap>
+  </readings>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>en</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Heart; Spirit; Core</destMeaning>
+        </meaning>
+      </entry>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>fr</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Coeur; Ame; Noyau</destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+</character>

@@ -1,0 +1,134 @@
+<character>
+  <characterId>20</characterId>
+  <jaUcsCode>26085</jaUcsCode>
+  <jaElementId>2513</jaElementId>
+  <jaJisCode>18044</jaJisCode>
+  <jaJouyouGrade>1</jaJouyouGrade>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <readings>
+    <SLCMap>
+      <entry>
+        <string>ja</string>
+        <map>
+          <entry>
+            <int>2</int>
+            <reading>
+              <sourceReading>ジツ</sourceReading>
+              <jpReadingType>on</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>day; sun</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>jour; soleil</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+          <entry>
+            <int>4</int>
+            <reading>
+              <sourceReading>-か</sourceReading>
+              <jpReadingType>kun</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>&lt;counter for days&gt;</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>&lt;compteur pour les jours&gt;</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+          <entry>
+            <int>1</int>
+            <reading>
+              <sourceReading>ニチ</sourceReading>
+              <jpReadingType>on</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>day; sun</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>jour; soleil</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+          <entry>
+            <int>3</int>
+            <reading>
+              <sourceReading>ひ</sourceReading>
+              <jpReadingType>kun</jpReadingType>
+              <meanings>
+                <DLCMap>
+                  <entry>
+                    <string>en</string>
+                    <readingMeaning>
+                      <destReadingMeaning>day; sun</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                  <entry>
+                    <string>fr</string>
+                    <readingMeaning>
+                      <destReadingMeaning>jour; soleil</destReadingMeaning>
+                    </readingMeaning>
+                  </entry>
+                </DLCMap>
+              </meanings>
+            </reading>
+          </entry>
+        </map>
+      </entry>
+    </SLCMap>
+  </readings>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>fr</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Jour; Soleil; Japon</destMeaning>
+        </meaning>
+      </entry>
+      <entry>
+        <identifier>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+          <destLanguageCode>en</destLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>Day; Sun; Japan</destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+</character>

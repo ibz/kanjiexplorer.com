@@ -1,0 +1,36 @@
+<character>
+  <characterId>30</characterId>
+  <jaElementId>553</jaElementId>
+  <jaJisCode>21368</jaJisCode>
+  <jaJouyouGrade>0</jaJouyouGrade>
+  <jaUcsCode>22231</jaUcsCode>
+  <meanings>
+    <identifierMap>
+      <entry>
+        <identifier>
+          <destLanguageCode>en</destLanguageCode>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning>enclosure radical, box</destMeaning>
+        </meaning>
+      </entry>
+      <entry>
+        <identifier>
+          <destLanguageCode>fr</destLanguageCode>
+          <sourceLanguageCode>ja</sourceLanguageCode>
+        </identifier>
+        <meaning>
+          <destMeaning></destMeaning>
+        </meaning>
+      </entry>
+    </identifierMap>
+  </meanings>
+  <readings>
+    <SLCMap/>
+  </readings>
+  <zhSimplifiedElementId>0</zhSimplifiedElementId>
+  <zhSimplifiedUcsCode>0</zhSimplifiedUcsCode>
+  <zhTraditionalElementId>0</zhTraditionalElementId>
+  <zhTraditionalUcsCode>0</zhTraditionalUcsCode>
+</character>

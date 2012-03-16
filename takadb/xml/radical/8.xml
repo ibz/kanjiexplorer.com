@@ -1,0 +1,35 @@
+<radical>
+  <radicalNumber>8</radicalNumber>
+  <variants>
+    <variantMap>
+      <entry>
+        <int>1</int>
+        <variant>
+          <elementId>1186</elementId>
+          <mnemonics>
+            <DLCMap>
+              <entry>
+                <string>en</string>
+                <mnemonic>
+                  <destMnemonic>Pot lid</destMnemonic>
+                </mnemonic>
+              </entry>
+            </DLCMap>
+          </mnemonics>
+          <names>
+            <SLCMap>
+              <entry>
+                <string>ja</string>
+                <radicalName>
+                  <sourceName>nabebuta</sourceName>
+                </radicalName>
+              </entry>
+            </SLCMap>
+          </names>
+          <position>T</position>
+          <strokeCount>2</strokeCount>
+        </variant>
+      </entry>
+    </variantMap>
+  </variants>
+</radical>
