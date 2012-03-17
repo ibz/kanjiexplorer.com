@@ -7,42 +7,59 @@ import sys
 import xml.parsers
 from xml.dom import minidom
 
-def load_elements():
-    elements = defaultdict(dict)
+def get_int(e):
+    return int(e.childNodes[0].nodeValue)
 
-    for e in os.listdir("takadb/xml/element"):
+def get_float(e):
+    return float(e.childNodes[0].nodeValue)
+
+def load_elements():
+    elements = {}
+
+    for filename in os.listdir("takadb/xml/element"):
         try:
-            x = minidom.parse("takadb/xml/element/%s" % e)
+            x = minidom.parse("takadb/xml/element/%s" % filename)
         except xml.parsers.expat.ExpatError:
             continue
         element_id = int(x.getElementsByTagName('elementId')[0].childNodes[0].nodeValue)
-        subelement_ids = [int(se.childNodes[0].nodeValue) for se in x.getElementsByTagName('pElementId')[0].getElementsByTagName('int')]
-        subelement_ids = [s for s in subelement_ids if s != 0]
 
-        pattern = x.getElementsByTagName('pattern')
-        if pattern and pattern[0].childNodes:
-            pattern = pattern[0].childNodes[0].nodeValue
-        else:
-            pattern = None
+        variants = {}
+        variant_elements = x.getElementsByTagName('glyphs')[0].getElementsByTagName('variantMap')[0].getElementsByTagName('entry')
+        for e in variant_elements:
+            variant_id = int(e.getElementsByTagName('int')[0].childNodes[0].nodeValue)
+            centre_point = int(e.getElementsByTagName('centrePoint')[0].childNodes[0].nodeValue)
+            height = int(e.getElementsByTagName('height')[0].childNodes[0].nodeValue)
+            width = int(e.getElementsByTagName('width')[0].childNodes[0].nodeValue)
+            standalone = e.getElementsByTagName('standalone')[0].childNodes[0].nodeValue == "true"
+            subelement_variants = map(get_int, e.getElementsByTagName('pGlyphVariant')[0].getElementsByTagName('int'))
+            subelement_heights = map(get_int, e.getElementsByTagName('pHeight')[0].getElementsByTagName('int'))
+            subelement_widths = map(get_int, e.getElementsByTagName('pWidth')[0].getElementsByTagName('int'))
+            subelement_xs = map(get_int, e.getElementsByTagName('pX')[0].getElementsByTagName('int'))
+            subelement_ys = map(get_int, e.getElementsByTagName('pY')[0].getElementsByTagName('int'))
 
-        standalone = x.getElementsByTagName('standalone')[0].childNodes[0].nodeValue == "true"
+            strokes = []
+            stroke_elements = e.getElementsByTagName('strokes')[0].getElementsByTagName('stroke')
+            for se in stroke_elements:
+                segments = [{'t': el.getElementsByTagName('type')[0].childNodes[0].nodeValue,
+                             'p': [get_float(p) for p in el.getElementsByTagName('points')[0].getElementsByTagName('float') if get_float(p) != 0]}
+                            for el in se.getElementsByTagName('segment')]
+                strokes.append(segments)
 
-        strokes = []
-        stroke_elements = x.getElementsByTagName('strokes')[0].getElementsByTagName('stroke')
-        for e in stroke_elements:
-            segments = [{'t': el.getElementsByTagName('type')[0].childNodes[0].nodeValue,
-                         'p': [p.childNodes[0].nodeValue for p in el.getElementsByTagName('points')[0].getElementsByTagName('float') if float(p.childNodes[0].nodeValue) != 0]}
-                         for el in e.getElementsByTagName('segment')]
-            strokes.append(segments)
+            variants[variant_id] = {'centre_point': centre_point, 'height': height, 'width': width, 'standalone': standalone,
+                                    'subelement_variants': subelement_variants, 'subelement_heights': subelement_heights, 'subelement_widths': subelement_widths,
+                                    'subelement_xs': subelement_xs, 'subelement_ys': subelement_ys,
+                                    'strokes': strokes}
 
-        elements[element_id] = {'strokes': strokes, 'sub_elements': subelement_ids, 'pattern': pattern, 'standalone': standalone}
+        subelement_ids = map(get_int, x.getElementsByTagName('pElementId')[0].getElementsByTagName('int'))
+
+        elements[element_id] = {'subelements': subelement_ids, 'variants': variants}
     return elements
 
 SVG = """<?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
 <style type="text/css"><![CDATA[
-  .stroke { fill:none; stroke:black; stroke-width:5 }
+  .stroke { fill:none; stroke:black; stroke-width:2 }
 ]]></style>
 %s
 </svg>
@@ -51,17 +68,42 @@ SVG = """<?xml version="1.0" standalone="no"?>
 STROKE_SVG = """<path class="stroke" d="%s" />"""
 
 def get_stroke_svg(s):
-    return STROKE_SVG % " ".join("%s %s" % (segment['t'], " ".join(segment['p'])) for segment in s)
+    return STROKE_SVG % " ".join("%s %s" % (segment['t'], " ".join(map(str, segment['p']))) for segment in s)
 
-def get_element_svg(elements, element_id):
+def transform_stroke(s, transform, transform_arg):
+    return [{'t': segment['t'], 'p': [transform(segment['p'][i], transform_arg[i % 2]) for i in range(len(segment['p']))]} for segment in s]
+
+def translate_strokes(strokes, translation):
+    return [transform_stroke(s, lambda n, s: n + s, translation) for s in strokes]
+
+def scale_strokes(strokes, scale):
+    return [transform_stroke(s, lambda n, s: n * s, scale) for s in strokes]
+
+def get_element_strokes(elements, element_id, variant_id, width, height, outer):
     element = elements[element_id]
-    if element['standalone']:
-        return "\n".join(get_stroke_svg(s) for s in element['strokes'])
+    variant = element['variants'][variant_id]
+
+    scale = (float(width) / float(variant['width']), float(height) / float(variant['height']))
+
+    if variant['standalone']:
+        strokes = variant['strokes']
     else:
-        return "\n\n".join(get_element_svg(elements, subelement_id) for subelement_id in element['sub_elements'])
+        strokes = []
+        for i, subelement_id in enumerate(element['subelements']):
+            if subelement_id == 0:
+                continue
+            subelement_strokes = get_element_strokes(elements, subelement_id, variant['subelement_variants'][i], variant['subelement_widths'][i], variant['subelement_heights'][i], False)
+            subelement_strokes = translate_strokes(subelement_strokes, (variant['subelement_xs'][i], variant['subelement_ys'][i]))
+            strokes.extend(subelement_strokes)
+
+    if not outer:
+        strokes = scale_strokes(strokes, scale)
+
+    return strokes
 
 def get_svg(elements, element_id):
-    return SVG % get_element_svg(elements, element_id)
+    strokes = get_element_strokes(elements, element_id, 1, 100, 100, True)
+    return SVG % "\n".join(get_stroke_svg(s) for s in strokes)
 
 def main():
     elements = load_elements()
