@@ -6,7 +6,7 @@
 var curr;
 
 function make_link(v) {
-    return '<a href="javascript:update(' + v + ')">' + v + '</a>';
+    return '<a href="javascript:update(' + v + ')"><img src="svg/' + v + '.svg" /></a>';
 }
 
 function update(next) {
@@ -33,11 +33,10 @@ $(function() {
 //]]></script>
 </head>
 <body>
-<ul>
-  <li id="refs_0"></li>
-  <li id="curr"></li>
-  <li id="refs_1"></li>
-</ul>
-
+  <p id="refs_0"></p>
+  <hr />
+  <p id="curr"></p>
+  <hr />
+  <p id="refs_1"></p>
 </body>
 </html>
