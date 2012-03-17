@@ -12,6 +12,32 @@ function make_link(v) {
 function update(next) {
     curr = next;
     $("#curr").html(make_link(curr));
+
+    jQuery.ajax({
+        type: "GET",
+        url: "dict/" + curr + ".json",
+        dataType: "json",
+        success: function(data) {
+            var text = "unicode: " + data['character'] + "<br />";
+            if (data['meanings']) {
+                text += "meaning: " + data['meanings'].toLowerCase() + "<br />";
+            }
+            if (data['readings'] && (data['readings']['on'] || data['readings']['kun'])) {
+                text += "reading: ";
+                if (data['readings']['on']) {
+                    text += data['readings']['on'] + " (on) "
+                }
+                if (data['readings']['kun']) {
+                    text += data['readings']['kun'] + " (kun) ";
+                }
+            }
+            $("#dict").html(text);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            $("#dict").text("");
+        }
+    });
+
     var next_refs = t[next.toString()];
     var refs_0 = "";
     for (var i = 0; i < next_refs[0].length; i++) {
@@ -26,17 +52,16 @@ function update(next) {
 }
 
 $(function() {
-
     update(1);
 });
 
 //]]></script>
 </head>
 <body>
-  <table width="100%" height="100%">
-    <tr><td id="refs_0" align="center" style="background: #cccccc" height="100px"></td></tr>
-    <tr><td id="curr" align="center" style="background: #eeeeee" height="100px"></td></tr>
-    <tr><td id="refs_1" align="center" style="background: #cccccc" height="100px"></td></tr>
+  <table width="100%">
+    <tr><td id="refs_0" align="center" style="background: #cccccc" height="100px" colspan="2"></td></tr>
+    <tr><td id="curr" align="center" style="background: #eeeeee" height="100px" width="50%"></td><td id="dict" height="100px" width="50%"></td></tr>
+    <tr><td id="refs_1" align="center" style="background: #cccccc" height="100px" colspan="2"></td></tr>
   </table>
 </body>
 </html>
