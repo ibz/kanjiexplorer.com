@@ -6,7 +6,7 @@
 var curr;
 
 function make_link(v) {
-    return '<a href="javascript:update(' + v + ')"><img src="svg/' + v + '.svg" /></a>';
+    return '<a href="javascript:update(' + v + ')"><img src="svg/' + v + '.svg" width="100" height="100" /></a> ';
 }
 
 function update(next) {
@@ -15,11 +15,11 @@ function update(next) {
     var next_refs = t[next.toString()];
     var refs_0 = "";
     for (var i = 0; i < next_refs[0].length; i++) {
-        refs_0 += "|" + make_link(next_refs[0][i]);
+        refs_0 += make_link(next_refs[0][i]);
     }
     var refs_1 = "";
     for (var i = 0; i < next_refs[1].length; i++) {
-        refs_1 += "|" + make_link(next_refs[1][i]);
+        refs_1 += make_link(next_refs[1][i]);
     }
     $("#refs_0").html(refs_0);
     $("#refs_1").html(refs_1);
@@ -33,10 +33,10 @@ $(function() {
 //]]></script>
 </head>
 <body>
-  <p id="refs_0"></p>
-  <hr />
-  <p id="curr"></p>
-  <hr />
-  <p id="refs_1"></p>
+  <table width="100%" height="100%">
+    <tr><td id="refs_0" align="center" style="background: #cccccc" height="100px"></td></tr>
+    <tr><td id="curr" align="center" style="background: #eeeeee" height="100px"></td></tr>
+    <tr><td id="refs_1" align="center" style="background: #cccccc" height="100px"></td></tr>
+  </table>
 </body>
 </html>
