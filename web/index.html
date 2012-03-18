@@ -51,8 +51,24 @@ function update(next) {
     $("#refs_1").html(refs_1);
 }
 
+function get_random_element() {
+    var max = 0;
+    for (k in t) {
+        if (parseInt(k) > max) {
+            max = k;
+        }
+    }
+
+    var r;
+    do {
+         r = (Math.floor(Math.random() * max) + 1).toString();
+    } while (!t.hasOwnProperty(r));
+
+    return r;
+}
+
 $(function() {
-    update(1);
+    update(get_random_element());
 });
 
 //]]></script>
