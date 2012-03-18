@@ -2,16 +2,23 @@
 <head>
 <script src="elements.json" type="text/javascript"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="screen.css">
+
 <script type="text/javascript">//<![CDATA[
+
 var curr;
 
-function make_link(v) {
-    return '<a href="javascript:update(' + v + ')"><img src="svg/' + v + '.svg" width="100" height="100" /></a> ';
+function get_svg(v, link) {
+    if (link) {
+        return '<a href="javascript:update(' + v + ', true)"><img src="svg/' + v + '.svg" width="100" height="100" /></a> ';
+    } else {
+        return '<img src="svg/' + v + '.svg" width="100" height="100" />'
+    }
 }
 
-function update(next) {
+function update(next, clear_help) {
     curr = next;
-    $("#curr").html(make_link(curr));
+    $("#curr").html(get_svg(curr, false));
 
     jQuery.ajax({
         type: "GET",
@@ -41,14 +48,18 @@ function update(next) {
     var next_refs = t[next.toString()];
     var refs_0 = "";
     for (var i = 0; i < next_refs[0].length; i++) {
-        refs_0 += make_link(next_refs[0][i]);
+        refs_0 += get_svg(next_refs[0][i], true);
     }
     var refs_1 = "";
     for (var i = 0; i < next_refs[1].length; i++) {
-        refs_1 += make_link(next_refs[1][i]);
+        refs_1 += get_svg(next_refs[1][i], true);
     }
     $("#refs_0").html(refs_0);
     $("#refs_1").html(refs_1);
+
+    if (clear_help) {
+        $("#help").text("");
+    }
 }
 
 function get_random_element() {
@@ -68,16 +79,22 @@ function get_random_element() {
 }
 
 $(function() {
-    update(get_random_element());
+    update(get_random_element(), false);
 });
 
 //]]></script>
 </head>
 <body>
-  <table width="100%">
+  <table width="100%" height="100%">
+  <tr><td valign="center">
+  <p align="center" id="help">how it works: you start with a random kanji. you can see its components (above) and its derivatives (below). click any of those to navigate.</p>
+  <table width="100%" style="vertical-align: center">
     <tr><td id="refs_0" align="center" style="background: #cccccc" height="100px" colspan="2"></td></tr>
     <tr><td id="curr" align="center" style="background: #eeeeee" height="100px" width="50%"></td><td id="dict" height="100px" width="50%"></td></tr>
     <tr><td id="refs_1" align="center" style="background: #cccccc" height="100px" colspan="2"></td></tr>
+  </table>
+  <p align="center"><a href="about.html">(about)</a></p>
+  </td></tr>
   </table>
 </body>
 </html>
