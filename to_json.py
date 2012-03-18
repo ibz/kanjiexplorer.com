@@ -9,9 +9,9 @@ from xml.dom import minidom
 
 def load_elements():
     elements = defaultdict(lambda: ([], []))
-    for e in os.listdir("xml/element"):
+    for e in os.listdir("takadb/xml/element"):
         try:
-            x = minidom.parse("xml/element/%s" % e)
+            x = minidom.parse("takadb/xml/element/%s" % e)
         except xml.parsers.expat.ExpatError:
             continue
         element_id = int(x.getElementsByTagName('elementId')[0].childNodes[0].nodeValue)
@@ -24,6 +24,8 @@ def load_elements():
 
 def main():
     elements = load_elements()
+
+    import pdb;pdb.set_trace()
 
     with file("web/elements.js", "w"):
         f.write(simplejson.dumps(elements))
