@@ -25,7 +25,8 @@ def load_elements():
 def main():
     elements = load_elements()
 
-    print simplejson.dumps(elements)
+    with file("web/elements.js", "w"):
+        f.write(simplejson.dumps(elements))
 
 if __name__ == '__main__':
     main()

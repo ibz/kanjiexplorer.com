@@ -39,6 +39,9 @@ def load_characters():
 def main():
     elements = load_characters()
 
+    if not os.path.exists("web/dict"):
+        os.mkdir("web/dict")
+
     for element_id, element in elements.iteritems():
         with file("web/dict/%s.json" % element_id, "w") as f:
             f.write(simplejson.dumps(element))

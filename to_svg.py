@@ -108,8 +108,11 @@ def get_svg(elements, element_id):
 def main():
     elements = load_elements()
 
+    if not os.path.exists("web/svg"):
+        os.mkdir("web/svg")
+
     for element_id in elements:
-        with file("svg/%s.svg" % element_id, "w") as f:
+        with file("web/svg/%s.svg" % element_id, "w") as f:
             f.write(get_svg(elements, element_id))
 
 if __name__ == '__main__':
