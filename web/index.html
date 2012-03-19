@@ -8,11 +8,14 @@
 
 var curr;
 
+var KANJI_WIDTH = 100;
+var KANJI_HEIGHT = 100;
+
 function get_svg(v, link) {
     if (link) {
-        return '<a href="javascript:update(' + v + ', true)"><img src="svg/' + v + '.svg" width="100" height="100" /></a> ';
+        return '<a class="kanji" href="javascript:update(' + v + ', true)"><object data="svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" /></a> ';
     } else {
-        return '<img src="svg/' + v + '.svg" width="100" height="100" />'
+        return '<object data="svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" />';
     }
 }
 
