@@ -56,7 +56,7 @@ function update(next, clear_help) {
     update_curr(curr);
     update_dict(curr);
 
-    var next_refs = t[next.toString()];
+    var next_refs = elements[next.toString()];
     var refs_0 = "";
     for (var i = 0; i < next_refs[0].length; i++) {
         refs_0 += get_svg(next_refs[0][i], true);
