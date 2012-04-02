@@ -5,5 +5,5 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-a.kanji { position: relative; display: inline-block; }
+a.kanji { position: relative; display: inline-block; padding: 10px; }
 a.kanji:after { content: ""; position: absolute; top: 0; left: 0; bottom: 0; right: 0;}

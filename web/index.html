@@ -13,19 +13,16 @@ var KANJI_HEIGHT = 100;
 
 function get_svg(v, link) {
     if (link) {
-        return '<a class="kanji" href="javascript:update(' + v + ', true)"><object data="svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" /></a> ';
+        return '<a class="kanji" href="javascript:update(' + v + ', true)" id="' + v + '"><object data="svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" /></a> ';
     } else {
         return '<object data="svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" />';
     }
 }
 
-function update(next, clear_help) {
-    curr = next;
-    $("#curr").html(get_svg(curr, false));
-
+function update_dict(v) {
     jQuery.ajax({
         type: "GET",
-        url: "dict/" + curr + ".json",
+        url: "dict/" + v + ".json",
         dataType: "json",
         success: function(data) {
             var text = "unicode: " + data['character'] + "<br />";
@@ -47,6 +44,17 @@ function update(next, clear_help) {
             $("#dict").text("");
         }
     });
+}
+
+function update_curr(v) {
+    $("#curr").html(get_svg(v, false));
+}
+
+function update(next, clear_help) {
+    curr = next;
+
+    update_curr(curr);
+    update_dict(curr);
 
     var next_refs = t[next.toString()];
     var refs_0 = "";
@@ -63,6 +71,8 @@ function update(next, clear_help) {
     if (clear_help) {
         $("#help").text("");
     }
+
+    $("a.kanji").hover(function() { var v = $(this).attr('id'); update_curr(v); update_dict(v); }, function() { update_curr(curr); update_dict(curr); });
 }
 
 function get_random_element() {
@@ -93,7 +103,7 @@ $(function() {
   <p align="center" id="help">how it works: you start with a random kanji. you can see its components (above) and its derivatives (below). click any of those to navigate.</p>
   <table width="100%" style="vertical-align: center">
     <tr><td id="refs_0" align="center" style="background: #cccccc" height="100px" colspan="2"></td></tr>
-    <tr><td id="curr" align="center" style="background: #eeeeee" height="100px" width="50%"></td><td id="dict" height="100px" width="50%"></td></tr>
+    <tr><td id="curr" align="right" style="background: #eeeeee; padding-right: 20px;" height="120px" width="50%"></td><td id="dict" align="left" style="padding-left: 20px;" height="120px" width="50%"></td></tr>
     <tr><td id="refs_1" align="center" style="background: #cccccc" height="100px" colspan="2"></td></tr>
   </table>
   <p align="center"><a href="about.html">(about)</a></p>
