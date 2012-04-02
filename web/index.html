@@ -7,6 +7,7 @@
 <script type="text/javascript">//<![CDATA[
 
 var curr;
+var hovered;
 
 var KANJI_WIDTH = 100;
 var KANJI_HEIGHT = 100;
@@ -38,10 +39,14 @@ function update_dict(v) {
                     text += data['readings']['kun'] + " (kun) ";
                 }
             }
-            $("#dict").html(text);
+            if (v == hovered) {
+                $("#dict").html(text);
+            }
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-            $("#dict").text("");
+            if (v == hovered) {
+                $("#dict").text("");
+            }
         }
     });
 }
@@ -74,7 +79,7 @@ function update(next, clear_help) {
 
     window.location.hash = "#" + curr;
 
-    $("a.kanji").hover(function() { var v = $(this).attr('id'); update_curr(v); update_dict(v); }, function() { update_curr(curr); update_dict(curr); });
+    $("a.kanji").hover(function() { hovered = $(this).attr('id'); update_curr(hovered); update_dict(hovered); }, function() { hovered = curr; update_curr(hovered); update_dict(hovered); });
 }
 
 function get_random_element() {
