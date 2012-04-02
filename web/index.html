@@ -72,6 +72,8 @@ function update(next, clear_help) {
         $("#help").text("");
     }
 
+    window.location.hash = "#" + curr;
+
     $("a.kanji").hover(function() { var v = $(this).attr('id'); update_curr(v); update_dict(v); }, function() { update_curr(curr); update_dict(curr); });
 }
 
@@ -92,7 +94,11 @@ function get_random_element() {
 }
 
 $(function() {
-    update(get_random_element(), false);
+    if (window.location.hash == "") {
+        update(get_random_element(), false);
+    } else {
+        update(window.location.hash.substring(1), false);
+    }
 });
 
 //]]></script>
