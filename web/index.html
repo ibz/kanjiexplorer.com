@@ -100,7 +100,6 @@ function get_random_element() {
 }
 
 function update_from_hash() {
-    console.debug(window.location.hash);
     if (window.location.hash == "") {
         update(get_random_element(), false);
     } else {
