@@ -99,12 +99,19 @@ function get_random_element() {
     return r;
 }
 
-$(function() {
+function update_from_hash() {
+    console.debug(window.location.hash);
     if (window.location.hash == "") {
         update(get_random_element(), false);
     } else {
         update(window.location.hash.substring(1), false);
     }
+}
+
+$(function() {
+    update_from_hash();
+
+    $(window).bind('hashchange', update_from_hash);
 });
 
 //]]></script>
