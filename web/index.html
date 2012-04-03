@@ -27,7 +27,10 @@ function update_dict(v) {
         url: "dict/" + v + ".json",
         dataType: "json",
         success: function(data) {
-            var text = "unicode: " + data['character'] + "<br />";
+            var text = "";
+            if (data['character']) {
+                text += "unicode: " + data['character'] + "<br />";
+            }
             if (data['meanings']) {
                 text += "meaning: " + data['meanings'].toLowerCase() + "<br />";
             }
@@ -85,7 +88,7 @@ function update(next, clear_help) {
 
 function get_random_element() {
     var max = 0;
-    for (k in t) {
+    for (k in elements) {
         if (parseInt(k) > max) {
             max = k;
         }
@@ -94,7 +97,7 @@ function get_random_element() {
     var r;
     do {
          r = (Math.floor(Math.random() * max) + 1).toString();
-    } while (!t.hasOwnProperty(r));
+    } while (!elements.hasOwnProperty(r));
 
     return r;
 }

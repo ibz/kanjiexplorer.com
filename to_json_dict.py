@@ -42,9 +42,9 @@ def main():
     if not os.path.exists("web/dict"):
         os.mkdir("web/dict")
 
-    for element_id, element in elements.iteritems():
+    for element_id in range(1, max(elements) + 1):
         with file("web/dict/%s.json" % element_id, "w") as f:
-            f.write(simplejson.dumps(element))
+            f.write(simplejson.dumps(elements.get(element_id, {})))
 
 if __name__ == '__main__':
     main()
