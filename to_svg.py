@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 import os
-import simplejson
+import json
 import sys
 import xml.parsers
 from xml.dom import minidom

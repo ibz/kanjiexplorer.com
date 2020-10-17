@@ -4,7 +4,7 @@ from collections import defaultdict
 from xml.etree import ElementTree
 import xml.parsers
 import os
-import simplejson
+import json
 import sys
 
 def load_characters():
@@ -44,7 +44,7 @@ def main():
 
     for element_id in range(1, max(elements) + 1):
         with file("web/dict/%s.json" % element_id, "w") as f:
-            f.write(simplejson.dumps(elements.get(element_id, {})))
+            f.write(json.dumps(elements.get(element_id, {})))
 
 if __name__ == '__main__':
     main()

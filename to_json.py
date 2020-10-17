@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 import os
-import simplejson
+import json
 import sys
 import xml.parsers
 from xml.dom import minidom
@@ -27,7 +27,7 @@ def main():
     elements = load_elements()
 
     with file("web/elements.json", "w") as f:
-        f.write("var elements = %s;" % simplejson.dumps(elements))
+        f.write("var elements = %s;" % json.dumps(elements))
 
 if __name__ == '__main__':
     main()
