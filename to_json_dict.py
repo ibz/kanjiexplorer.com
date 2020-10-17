@@ -10,11 +10,15 @@ import sys
 def load_characters():
     elements = {}
     for filename in os.listdir("takadb/xml/character"):
-        with file("takadb/xml/character/%s" % filename) as f:
-            x = ElementTree.fromstring(f.read().decode("utf-8", "ignore").encode("utf-8"))
+        with open("takadb/xml/character/%s" % filename) as f:
+            try:
+                x = ElementTree.fromstring(f.read().encode("utf-8"))
+            except UnicodeDecodeError:
+                print("failed to decode: %s" % filename)
+                continue
 
         element_id = int(x.find("jaElementId").text)
-        character = unichr(int(x.find("jaUcsCode").text))
+        character = chr(int(x.find("jaUcsCode").text))
         readings = [(r.find("jpReadingType").text, r.find("sourceReading").text) for r in x.findall("readings/SLCMap/entry/map/entry/reading")]
         meanings = "; ".join(e.find("meaning/destMeaning").text for e in x.findall("meanings/identifierMap/entry") if e.find('identifier/destLanguageCode').text == "en" and e.find("meaning/destMeaning").text)
 
@@ -43,7 +47,7 @@ def main():
         os.mkdir("web/dict")
 
     for element_id in range(1, max(elements) + 1):
-        with file("web/dict/%s.json" % element_id, "w") as f:
+        with open("web/dict/%s.json" % element_id, "w") as f:
             f.write(json.dumps(elements.get(element_id, {})))
 
 if __name__ == '__main__':

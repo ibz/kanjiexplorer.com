@@ -20,13 +20,13 @@ def load_elements():
         elements[element_id][0].update(subelement_ids)
         for subelement_id in subelement_ids:
             elements[subelement_id][1].add(element_id)
-    elements = dict((k, (list(v[0]), list(v[1]))) for k, v in elements.iteritems())
+    elements = dict((k, (list(v[0]), list(v[1]))) for k, v in elements.items())
     return elements
 
 def main():
     elements = load_elements()
 
-    with file("web/elements.json", "w") as f:
+    with open("web/elements.json", "w") as f:
         f.write("var elements = %s;" % json.dumps(elements))
 
 if __name__ == '__main__':

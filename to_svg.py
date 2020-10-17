@@ -31,11 +31,11 @@ def load_elements():
             height = int(e.getElementsByTagName('height')[0].childNodes[0].nodeValue)
             width = int(e.getElementsByTagName('width')[0].childNodes[0].nodeValue)
             standalone = e.getElementsByTagName('standalone')[0].childNodes[0].nodeValue == "true"
-            subelement_variants = map(get_int, e.getElementsByTagName('pGlyphVariant')[0].getElementsByTagName('int'))
-            subelement_heights = map(get_int, e.getElementsByTagName('pHeight')[0].getElementsByTagName('int'))
-            subelement_widths = map(get_int, e.getElementsByTagName('pWidth')[0].getElementsByTagName('int'))
-            subelement_xs = map(get_int, e.getElementsByTagName('pX')[0].getElementsByTagName('int'))
-            subelement_ys = map(get_int, e.getElementsByTagName('pY')[0].getElementsByTagName('int'))
+            subelement_variants = [get_int(i) for i in e.getElementsByTagName('pGlyphVariant')[0].getElementsByTagName('int')]
+            subelement_heights = [get_int(i) for i in e.getElementsByTagName('pHeight')[0].getElementsByTagName('int')]
+            subelement_widths = [get_int(i) for i in e.getElementsByTagName('pWidth')[0].getElementsByTagName('int')]
+            subelement_xs = [get_int(i) for i in e.getElementsByTagName('pX')[0].getElementsByTagName('int')]
+            subelement_ys = [get_int(i) for i in e.getElementsByTagName('pY')[0].getElementsByTagName('int')]
 
             strokes = []
             stroke_elements = e.getElementsByTagName('strokes')[0].getElementsByTagName('stroke')
@@ -50,7 +50,7 @@ def load_elements():
                                     'subelement_xs': subelement_xs, 'subelement_ys': subelement_ys,
                                     'strokes': strokes}
 
-        subelement_ids = map(get_int, x.getElementsByTagName('pElementId')[0].getElementsByTagName('int'))
+        subelement_ids = [get_int(i) for i in x.getElementsByTagName('pElementId')[0].getElementsByTagName('int')]
 
         elements[element_id] = {'subelements': subelement_ids, 'variants': variants}
     return elements
@@ -112,7 +112,7 @@ def main():
         os.mkdir("web/svg")
 
     for element_id in elements:
-        with file("web/svg/%s.svg" % element_id, "w") as f:
+        with open("web/svg/%s.svg" % element_id, "w") as f:
             f.write(get_svg(elements, element_id))
 
 if __name__ == '__main__':
