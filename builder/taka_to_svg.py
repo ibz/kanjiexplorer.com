@@ -13,12 +13,12 @@ def get_int(e):
 def get_float(e):
     return float(e.childNodes[0].nodeValue)
 
-def load_elements():
+def load_elements(from_dir):
     elements = {}
 
-    for filename in os.listdir("takadb/xml/element"):
+    for filename in os.listdir(os.path.join(from_dir, "xml/element")):
         try:
-            x = minidom.parse("takadb/xml/element/%s" % filename)
+            x = minidom.parse(os.path.join(from_dir, "xml/element/%s" % filename))
         except xml.parsers.expat.ExpatError:
             continue
         element_id = int(x.getElementsByTagName('elementId')[0].childNodes[0].nodeValue)
@@ -105,15 +105,15 @@ def get_svg(elements, element_id):
     strokes = get_element_strokes(elements, element_id, 1, 100, 100, True)
     return SVG % "\n".join(get_stroke_svg(s) for s in strokes)
 
-def main():
-    elements = load_elements()
+def main(from_dir, to_dir):
+    elements = load_elements(from_dir)
 
-    if not os.path.exists("web/svg"):
-        os.mkdir("web/svg")
+    if not os.path.exists(os.path.join(to_dir, "svg")):
+        os.mkdir(os.path.join(to_dir, "svg"))
 
     for element_id in elements:
-        with open("web/svg/%s.svg" % element_id, "w") as f:
+        with open(os.path.join(to_dir, "svg/%s.svg" % element_id), "w") as f:
             f.write(get_svg(elements, element_id))
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1], sys.argv[2])

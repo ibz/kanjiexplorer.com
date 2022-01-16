@@ -7,10 +7,10 @@ import os
 import json
 import sys
 
-def load_characters():
+def load_characters(from_dir):
     elements = {}
-    for filename in os.listdir("takadb/xml/character"):
-        with open("takadb/xml/character/%s" % filename) as f:
+    for filename in os.listdir(os.path.join(from_dir, "xml/character")):
+        with open(os.path.join(from_dir, "xml/character/%s" % filename)) as f:
             try:
                 x = ElementTree.fromstring(f.read().encode("utf-8"))
             except UnicodeDecodeError:
@@ -40,15 +40,15 @@ def load_characters():
 
     return elements
 
-def main():
-    elements = load_characters()
+def main(from_dir, to_dir):
+    elements = load_characters(from_dir)
 
-    if not os.path.exists("web/dict"):
-        os.mkdir("web/dict")
+    if not os.path.exists(os.path.join(to_dir, "dict")):
+        os.mkdir(os.path.join(to_dir, "dict"))
 
     for element_id in range(1, max(elements) + 1):
-        with open("web/dict/%s.json" % element_id, "w") as f:
+        with open(os.path.join(to_dir, "dict/%s.json" % element_id), "w") as f:
             f.write(json.dumps(elements.get(element_id, {})))
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1], sys.argv[2])

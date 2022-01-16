@@ -1,0 +1,32 @@
+name: Build and deploy web
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build the "builder" Docker image
+      run: docker build . --file Dockerfile.builder --tag kanjiexplorer-builder:latest
+
+    - name: Generate JSON and SVG from Taka
+      run: |
+        docker run \
+        -v ${{ github.workspace }}/takadb:/taka -v ${{ github.workspace }}/web:/web \
+        kanjiexplorer-builder /builder/taka_to_web.sh
+
+    - name: Build the site in the jekyll/builder container
+      run: |
+        docker run \
+        -v ${{ github.workspace }}/web:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4.2.2
+      with:
+        branch: gh-pages
+        folder: web

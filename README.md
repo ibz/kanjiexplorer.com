@@ -1,11 +1,8 @@
-First, build the JSON and SVG files:
+1. Build the "builder" image
 
-```python to_json.py```
+   ```docker build . --file Dockerfile.builder --tag kanjiexplorer-builder```
+1. Use the "builder" image to generate files
 
-```python to_json_dict.py```
+   ```docker run -v $(pwd)/takadb:/taka -v $(pwd)/web:/web kanjiexplorer-builder /builder/taka_to_web.sh```
 
-```python to_svg.py```
-
-Then, build the docker container:
-
-```sh build.sh```
+1. Serve `/web` in any way you want (nginx, GitHub Pages, ...)

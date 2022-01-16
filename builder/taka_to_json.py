@@ -7,11 +7,11 @@ import sys
 import xml.parsers
 from xml.dom import minidom
 
-def load_elements():
+def load_elements(from_dir):
     elements = defaultdict(lambda: (set(), set()))
-    for e in os.listdir("takadb/xml/element"):
+    for e in os.listdir(os.path.join(from_dir, "xml/element")):
         try:
-            x = minidom.parse("takadb/xml/element/%s" % e)
+            x = minidom.parse(os.path.join(from_dir, "xml/element/%s" % e))
         except xml.parsers.expat.ExpatError:
             continue
         element_id = int(x.getElementsByTagName('elementId')[0].childNodes[0].nodeValue)
@@ -23,11 +23,11 @@ def load_elements():
     elements = dict((k, (list(v[0]), list(v[1]))) for k, v in elements.items())
     return elements
 
-def main():
-    elements = load_elements()
+def main(from_dir, to_dir):
+    elements = load_elements(from_dir)
 
-    with open("web/elements.json", "w") as f:
+    with open(os.path.join(to_dir, "elements.json"), "w") as f:
         f.write("var elements = %s;" % json.dumps(elements))
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1], sys.argv[2])
