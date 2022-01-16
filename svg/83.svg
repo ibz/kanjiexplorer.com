@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%">
+<style type="text/css"><![CDATA[
+  .stroke { fill:none; stroke:black; stroke-width:2 }
+]]></style>
+<path class="stroke" d="M 23.770715441176474 11.605839 C 20.979818382352942 27.372261 15.183339705882354 41.970802 10.245597794117646 50.14598" />
+<path class="stroke" d="M 19.477026470588235 30.583939 L 19.477026470588235 90.43795" />
+<path class="stroke" d="M 45.752992192 8.513867999999999 L 45.752992192 37.664232" />
+<path class="stroke" d="M 45.752992192 8.513867999999999 L 82.4151808 8.513867999999999 L 82.4151808 37.3839408" />
+<path class="stroke" d="M 45.752992192 35.42189568 L 82.4151808 35.42189568" />
+<path class="stroke" d="M 33.04 60.094685 L 94.96 60.094685" />
+<path class="stroke" d="M 64.22716 42.4763 L 64.22716 93.2177" />
+<path class="stroke" d="M 48.782368 71.7665 C 45.829648 79.022 41.059936 85.9622 36.290224 90.0631" />
+<path class="stroke" d="M 79.44479199999999 72.082 C 84.214504 76.3933 88.30288 82.9127 91.482616 90.0631" />
+</svg>

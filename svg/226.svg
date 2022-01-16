@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%">
+<style type="text/css"><![CDATA[
+  .stroke { fill:none; stroke:black; stroke-width:2 }
+]]></style>
+<path class="stroke" d="M 8.69085 22.0316 L 2.3817 38.1199" />
+<path class="stroke" d="M 20.6782 22.0316 L 27.6183 38.1199" />
+<path class="stroke" d="M 14.6845 7.3123 L 14.6845 93.3186" />
+<path class="stroke" d="M 47.5255465 19.197079 C 46.91240809999999 27.372261 44.4598531 35.839413 40.7810213 41.38686" />
+<path class="stroke" d="M 45.0729915 33.79562 L 86.357665 33.79562" />
+<path class="stroke" d="M 65.01726339999999 12.4817505 L 65.01726339999999 89.56204" />
+<path class="stroke" d="M 47.7299255 60.9489 L 82.47444999999999 60.9489" />
+<path class="stroke" d="M 38.5328453 90.14598 L 91.262768 90.14598" />
+</svg>

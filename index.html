@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>Kanji Explorer</title>
+<script src="/elements.json" type="text/javascript"></script>
+<script src="/js/lib/jquery-1.7.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/screen.css">
+
+<script type="text/javascript">//<![CDATA[
+
+var curr;
+var hovered;
+
+var KANJI_WIDTH = 100;
+var KANJI_HEIGHT = 100;
+
+function get_svg(v, link) {
+    if (link) {
+        return '<a class="kanji" href="javascript:update(' + v + ', true)" id="' + v + '"><object data="svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" /></a> ';
+    } else {
+        return '<object data="svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" />';
+    }
+}
+
+function update_dict(v) {
+    jQuery.ajax({
+        type: "GET",
+        url: "dict/" + v + ".json",
+        dataType: "json",
+        success: function(data) {
+            var text = "";
+            if (data['character']) {
+                text += "unicode: " + data['character'] + "<br />";
+            }
+            if (data['meanings']) {
+                text += "meaning: " + data['meanings'].toLowerCase() + "<br />";
+            }
+            if (data['readings'] && (data['readings']['on'] || data['readings']['kun'])) {
+                text += "reading: ";
+                if (data['readings']['on']) {
+                    text += data['readings']['on'] + " (on) "
+                }
+                if (data['readings']['kun']) {
+                    text += data['readings']['kun'] + " (kun) ";
+                }
+            }
+            if (v == hovered) {
+                $("#dict").html(text);
+            }
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            if (v == hovered) {
+                $("#dict").text("");
+            }
+        }
+    });
+}
+
+function update_curr(v) {
+    $("#curr").html(get_svg(v, false));
+}
+
+function update(next, clear_help) {
+    curr = next;
+
+    update_curr(curr);
+    update_dict(curr);
+
+    var next_refs = elements[next.toString()];
+    var refs_0 = "";
+    for (var i = 0; i < next_refs[0].length; i++) {
+        refs_0 += get_svg(next_refs[0][i], true);
+    }
+    var refs_1 = "";
+    for (var i = 0; i < next_refs[1].length; i++) {
+        refs_1 += get_svg(next_refs[1][i], true);
+    }
+    $("#refs_0").html(refs_0);
+    $("#refs_1").html(refs_1);
+
+    if (clear_help) {
+        $("#help").text("");
+    }
+
+    window.location.hash = "#" + curr;
+
+    $("a.kanji").hover(function() { hovered = $(this).attr('id'); update_curr(hovered); update_dict(hovered); }, function() { hovered = curr; update_curr(hovered); update_dict(hovered); });
+}
+
+function get_random_element() {
+    var max = 0;
+    for (k in elements) {
+        if (parseInt(k) > max) {
+            max = k;
+        }
+    }
+
+    var r;
+    do {
+         r = (Math.floor(Math.random() * max) + 1).toString();
+    } while (!elements.hasOwnProperty(r));
+
+    return r;
+}
+
+function update_from_hash() {
+    if (window.location.hash == "") {
+        update(get_random_element(), false);
+    } else {
+        update(window.location.hash.substring(1), false);
+    }
+}
+
+$(function() {
+    update_from_hash();
+
+    $(window).bind('hashchange', update_from_hash);
+});
+
+//]]></script>
+</head>
+<body>
+  <table width="100%" height="100%">
+  <tr><td valign="center">
+  <p align="center" id="help">How it works: you start with a random kanji. You can see its components (above) and its derivatives (below).<br />Hover any of those to see its definition, click to navigate.</p>
+  <table width="100%" style="vertical-align: center">
+    <tr><td id="refs_0" align="center" style="background: #cccccc" height="100px" colspan="2"></td></tr>
+    <tr><td id="curr" align="right" style="background: #eeeeee; padding-right: 20px;" height="120px" width="50%"></td><td id="dict" align="left" style="padding-left: 20px;" height="120px" width="50%"></td></tr>
+    <tr><td id="refs_1" align="center" style="background: #cccccc" height="100px" colspan="2"></td></tr>
+  </table>
+  <p align="center"><a href="/about.html">(about)</a></p>
+  </td></tr>
+  </table>
+</body>
+</html>
