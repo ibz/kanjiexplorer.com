@@ -17,13 +17,7 @@ jobs:
       run: |
         docker run \
         -v ${{ github.workspace }}/takadb:/taka -v ${{ github.workspace }}/web:/web \
-        kanjiexplorer-builder /builder/taka_to_web.sh
-
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}/web:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+        kanjiexplorer-builder /builder/taka_to_web.sh /taka /web
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4.2.2

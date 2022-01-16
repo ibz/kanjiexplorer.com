@@ -2,10 +2,10 @@
 
 echo "JSON..."
 
-python /builder/taka_to_json.py /taka /web
+python3 builder/taka_to_json.py $1 $2
 
 echo "JSON dict..."
-python /builder/taka_to_json_dict.py /taka /web
+python3 builder/taka_to_json_dict.py $1 $2
 
 echo "SVG..."
-python /builder/taka_to_svg.py /taka /web
+python3 builder/taka_to_svg.py $1 $2

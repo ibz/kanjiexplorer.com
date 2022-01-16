@@ -1,0 +1,11 @@
+version: "3.2"
+
+services:
+  jekyll:
+    image: jekyll/jekyll
+    container_name: jekyll-kanjiexplorer
+    command: jekyll serve
+    ports:
+      - 4000:4000
+    volumes:
+      - ./web:/srv/jekyll

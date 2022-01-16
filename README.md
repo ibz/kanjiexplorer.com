@@ -12,3 +12,9 @@ Feel free to download, study or modify the files in this repository in any way y
 * When a new commit is pushed to this repository, a GitHub workflow is run.
 * The XML data is parsed and used to generate `.json` and `.svg` files needed for the web interface. These files are saved under `web/`.
 * The `web/` directory (which now includes the Taka database in `.json` and `.svg` formats) is passed to a Jekyll builder and the output is then deployed to GitHub Pages.
+
+## Running locally
+
+```bash ./builder/taka_to_web.sh takadb/ web/```
+
+```docker-compose up```

@@ -1,4 +1,6 @@
 .DS_Store
+_site
+.jekyll-cache
 /web/elements.json
 /web/dict/
 /web/svg/
