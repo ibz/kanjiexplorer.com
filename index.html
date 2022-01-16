@@ -9,9 +9,9 @@ baseurl: /kanjiexplorer.com
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <title>Kanji Explorer</title>
-<script src="/{{ site.baseurl }}/elements.json" type="text/javascript"></script>
-<script src="/{{ site.baseurl }}/js/lib/jquery-1.7.1.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="{{ site.baseurl }}/screen.css">
+<script src="/{{ baseurl }}/elements.json" type="text/javascript"></script>
+<script src="/{{ baseurl }}/js/lib/jquery-1.7.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="{{ baseurl }}/screen.css">
 
 <script type="text/javascript">//<![CDATA[
 
@@ -25,14 +25,14 @@ function get_svg(v, link) {
     if (link) {
         return '<a class="kanji" href="javascript:update(' + v + ', true)" id="' + v + '"><object data="svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" /></a> ';
     } else {
-        return '<object data="/{{ site.baseurl }}/svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" />';
+        return '<object data="/{{ baseurl }}/svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" />';
     }
 }
 
 function update_dict(v) {
     jQuery.ajax({
         type: "GET",
-        url: "/{{ site.baseurl }}/dict/" + v + ".json",
+        url: "/{{ baseurl }}/dict/" + v + ".json",
         dataType: "json",
         success: function(data) {
             var text = "";
