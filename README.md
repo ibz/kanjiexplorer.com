@@ -1,8 +1,14 @@
-1. Build the "builder" image
+# Kanji Explorer
 
-   ```docker build . --file Dockerfile.builder --tag kanjiexplorer-builder```
-1. Use the "builder" image to generate files
+To use Kanji Explorer you don't need to download or build anything. Simply go to [kanjiexplorer.com](http://kanjiexplorer.com) and have fun.
 
-   ```docker run -v $(pwd)/takadb:/taka -v $(pwd)/web:/web kanjiexplorer-builder /builder/taka_to_web.sh```
+This repository contains the source code, the build scripts, as well as a copy of [the Taka database](http://taka.sourceforge.net/).
 
-1. Serve `/web` in any way you want (nginx, GitHub Pages, ...)
+Feel free to download, study or modify the files in this repository in any way you want. If you make any improvements, you can contribute back by sending a [Pull Request on GitHub](https://github.com/ibz/kanjiexplorer.com/pulls).
+
+## How it works
+
+* The Taka Database contains all the data about the characters, in XML format.
+* When a new commit is pushed to this repository, a GitHub workflow is run.
+* The XML data is parsed and used to generate `.json` and `.svg` files needed for the web interface. These files are saved under `web/`.
+* The `web/` directory (which now includes the Taka database in `.json` and `.svg` formats) is passed to a Jekyll builder and the output is then deployed to GitHub Pages.
