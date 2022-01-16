@@ -22,7 +22,7 @@ var KANJI_HEIGHT = 100;
 
 function get_svg(v, link) {
     if (link) {
-        return '<a class="kanji" href="javascript:update(' + v + ', true)" id="' + v + '"><object data="svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" /></a> ';
+        return '<a class="kanji" href="javascript:update(' + v + ', true)" id="' + v + '"><object data="{{ site.baseurl }}/svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" /></a> ';
     } else {
         return '<object data="{{ site.baseurl }}/svg/' + v + '.svg" width="' + KANJI_WIDTH + '" height="' + KANJI_HEIGHT + '" type="image/svg+xml" />';
     }
@@ -134,7 +134,7 @@ $(function() {
     <tr><td id="curr" align="right" style="background: #eeeeee; padding-right: 20px;" height="120px" width="50%"></td><td id="dict" align="left" style="padding-left: 20px;" height="120px" width="50%"></td></tr>
     <tr><td id="refs_1" align="center" style="background: #cccccc" height="100px" colspan="2"></td></tr>
   </table>
-  <p align="center"><a href="/about.html">(about)</a></p>
+  <p align="center"><a href="{{ site.url }}{{ site.baseurl }}/about.html">(about)</a></p>
   </td></tr>
   </table>
 </body>
